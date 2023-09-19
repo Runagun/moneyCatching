@@ -1,10 +1,10 @@
 
 //------------------------------------------- variabler
 
-let appleX = 200;
 let appleY = -15;
 let appleSize = 20;
-let kurvY = 350;
+let kurvY;
+let appleX;
 let kurvSize = 35;
 let appleSpeed = 1;
 let distance;
@@ -24,7 +24,9 @@ function setup() {
   bitcoinImg = loadImage("bitcoin.png");
   bakgrunn1 = loadImage("bakgrunn1.png");
   gameOver = loadImage("gameOver.png");
-  createCanvas(400, 400);
+  createCanvas(displayWidth, displayHeight);
+  kurvY = displayHeight - 50;
+  appleX = displayWidth/2;
 }
 
  
@@ -48,7 +50,7 @@ function eple() {
 
  
 
-  if (appleY >= 400) {
+  if (appleY >= displayHeight) {
     tekst();
     appleSpeed = 1;
   }
@@ -78,8 +80,8 @@ function kurv() {
 
 function tekst() {
   fill(255, 0, 0, 100);
-  rect(0,0,400,400,)
-  image(gameOver, 100, 150);
+  rect(0,0,displayWidth,displayHeight,)
+  image(gameOver, displayWidth/2, displayHeight/2);
   textAlign(CENTER);
   textSize(30);
   //text("GAME OVER", 200, 200);

@@ -25,14 +25,14 @@ function setup() {
   bakgrunn1 = loadImage("bakgrunn1.png");
   gameOver = loadImage("gameOver.png");
   createCanvas(displayWidth, displayHeight);
-  kurvY = displayHeight - 50;
+  kurvY = displayHeight - 100;
   appleX = displayWidth/2;
 }
 
  
 
 function draw() {
-  image(bakgrunn1,0,0)
+  image(bakgrunn1,0,0,displayWidth,displayHeight);
   //background(220);
   eple();
   kurv();
@@ -80,8 +80,8 @@ function kurv() {
 
 function tekst() {
   fill(255, 0, 0, 100);
-  rect(0,0,displayWidth,displayHeight,)
-  image(gameOver, displayWidth/2, displayHeight/2);
+  rect(0,0,displayWidth,displayHeight);
+  image(gameOver, (displayWidth/2)-100, (displayHeight/2) - 100, 200, 100);
   textAlign(CENTER);
   textSize(30);
   //text("GAME OVER", 200, 200);
@@ -107,4 +107,11 @@ function poengTekst(){
   textSize(25);
   textAlign(LEFT);
   text("Coins: "+ score,20,30);
+}
+
+function keyPressed() {
+  if (key === 'f' || key === 'F') {
+    let fs = fullscreen();
+    fullscreen(!fs);
+  }
 }

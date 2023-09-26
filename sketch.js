@@ -32,7 +32,7 @@ function setup() {
  
 
 function draw() {
-  image(bakgrunn1,0,0,displayWidth,displayHeight);
+  image(bakgrunn1,0,0,400,400);
   //background(220);
   eple();
   kurv();
